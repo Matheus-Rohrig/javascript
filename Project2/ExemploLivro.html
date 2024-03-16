@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="text/javascript" src="ExemploLivro.js"></script>
+
+    <Title>Calculadora de emprestimos em JavaScript</Title>
+
+
+</head>
+
+<body>
+    <main>
+        <h1>Calculador de emprestimo</h1>
+        <table>
+            <tr>
+                <th>Coloca os dados do emprestimo</th>
+                <td></td>
+                <th>Saldo do emprestimo, patrimonio acomulado, pagamento de juros</th>
+            </tr>
+                <tr>
+                <td>Valor do emprestimo ($)</td>
+                <td><input id="amount" onchange="calculate();"></td>
+                <td rowspan=8>
+                    <canvas id="graph" width="400" height="250"></canvas>
+                </td>
+            </tr>
+                <td>Juros anuais (%)</td>
+                <td><input id="apr" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>Tempo de pagamento (anos)</td>
+                <td><input id="years" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>CEP (para encontrar credores)</td>
+                <td><input id="cep" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>Pagamentos aproximados:</td>
+                <td id="button1"><button id="button1" onclick="calculate();">Calcule</button></td>
+            </tr>
+            <tr>
+                <td>Pagamento mensal</td>
+                <td>$<span class="output" id="payment"></span></td>
+            </tr>
+            <tr>
+                <td>Pagamento total</td>
+                <td>$<span class="output" id="total"></span></td>
+            </tr>
+            <tr>
+                <td>Juros total</td>
+                <td>$<span class="output" id="totalinterest"></span></td>
+            </tr>
+            <tr class="down">
+                <th>Patrocinadores:</th>
+                <td colspan=2>
+                    Feche seu emprestimo com um destes credores:
+                    <div id="lenders"></div>
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
